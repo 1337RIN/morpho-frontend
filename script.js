@@ -10,12 +10,12 @@ document.getElementById('analyze-btn').addEventListener('click', async () => {
 
     try {
         // Отправляем POST-запрос на наш Flask API
-        const response = await fetch('http://127.0.0.1:5000/api/analyze', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ text: textInput })
+        const response = await fetch('https://morpho-backend-shn8.onrender.com/api/analyze', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ text: textInput })
         });
 
         if (!response.ok) throw new Error('Ошибка сервера');
